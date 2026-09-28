@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bilisha — Design Reference</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --paper: #faf7f0;
+    --ink: #1b1d23;
+    --red: #b3261e;
+    --hairline: #ddd6c6;
+    --muted: #6b6f76;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #eee9dd;
+    color: var(--ink);
+    padding: 2rem 1rem 5rem;
+}
+h1.page-title {
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+p.page-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+/* -------- spec panel -------- */
+.spec-panel {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.spec-panel h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+}
+.swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+}
+.swatch-color {
+    width: 100%;
+    height: 42px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.font-sample { grid-column: span 2; }
+.font-sample .big {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.font-sample .small {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+.font-sample p { margin: 0.2rem 0; }
+
+/* -------- frame wrapper (looks like a figma frame) -------- */
+.frame-block {
+    max-width: 1080px;
+    margin: 0 auto 3.5rem;
+}
+.frame-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    padding-left: 4px;
+}
+.frame {
+    background: var(--paper);
+    border: 1px solid #cfc6ae;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* ---------- mini reproduction of the real site styles ---------- */
+.site-header { text-align: center; padding: 1.2rem 1rem 0.8rem; border-bottom: 3px solid var(--ink); }
+.today-date { font-size: 0.78rem; color: var(--muted); margin: 0 0 0.4rem; }
+.site-header h1 { font-family: 'Source Serif 4', serif; font-size: 2.1rem; margin: 0 0 0.8rem; color: var(--red); }
+.site-header nav a { margin: 0 0.7rem; font-size: 0.9rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+
+main-demo { display: block; max-width: 900px; margin: 0 auto; padding: 1.6rem 1.2rem 2.2rem; }
+
+.tag { display: inline-block; font-size: 0.7rem; font-weight: 600; color: var(--red); border: 1px solid var(--red); padding: 0.1rem 0.5rem; margin-bottom: 0.6rem; }
+
+.top-section { display: flex; gap: 2rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--hairline); }
+.lead-story { flex: 2; }
+.lead-story h2 { font-family: 'Source Serif 4', serif; font-size: 1.7rem; line-height: 1.2; margin: 0 0 0.5rem; }
+.lead-story p { font-size: 0.92rem; color: #33353c; margin: 0 0 0.6rem; }
+.byline { font-size: 0.78rem; color: var(--muted); }
+
+.side-list { flex: 1; border-left: 1px solid var(--hairline); padding-left: 1.6rem; }
+.side-list h3 { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); margin-top: 0; }
+.side-item { padding: 0.65rem 0; border-bottom: 1px solid var(--hairline); }
+.side-item a { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 0.92rem; color: var(--ink); text-decoration: none; }
+.small-text { font-size: 0.7rem; color: var(--muted); margin: 0.15rem 0 0; }
+
+.back-link { display: inline-block; margin-bottom: 0.8rem; color: var(--muted); font-size: 0.82rem; }
+.full-article { max-width: 620px; margin: 0 auto; }
+.full-article h1 { font-family: 'Source Serif 4', serif; font-size: 1.9rem; line-height: 1.2; margin: 0.3rem 0 0.5rem; }
+.full-article p { font-family: 'Source Serif 4', serif; font-size: 1rem; line-height: 1.65; }
+
+.add-form { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.2rem; }
+.add-form label { font-weight: 500; font-size: 0.85rem; margin-top: 0.6rem; }
+.add-form input, .add-form select, .add-form textarea { padding: 0.5rem; border: 1px solid var(--hairline); font-family: 'Inter', sans-serif; font-size: 0.9rem; border-radius: 3px; }
+.add-form button { margin-top: 1rem; padding: 0.6rem; background: var(--red); color: #fff; border: none; font-size: 0.9rem; border-radius: 3px; }
+
+.mini-footer { text-align: center; padding: 1rem; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--hairline); }
+
+/* annotation callouts */
+.note {
+    max-width: 1080px;
+    margin: 0.8rem auto 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding-left: 4px;
+}
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Bilisha — Design Reference</h1>
+<p class="page-sub">Recreate these frames in Figma using the values below. Everything here matches the real HTML/CSS exactly.</p>
+
+<!-- SPEC PANEL -->
+<div class="spec-panel">
+    <h3>Colors</h3>
+    <div class="swatch"><div class="swatch-color" style="background:#faf7f0"></div>Paper<br>#FAF7F0</div>
+    <div class="swatch"><div class="swatch-color" style="background:#1b1d23"></div>Ink<br>#1B1D23</div>
+    <div class="swatch"><div class="swatch-color" style="background:#b3261e"></div>Red accent<br>#B3261E</div>
+    <div class="swatch"><div class="swatch-color" style="background:#ddd6c6"></div>Hairline<br>#DDD6C6</div>
+
+    <h3>Typography</h3>
+    <div class="font-sample">
+        <p class="big">Headline — Source Serif 4</p>
+        <p class="small">Body / UI text — Inter, 400 &amp; 500 weight</p>
+    </div>
+    <div class="swatch">Headline size<br>~28–44px</div>
+    <div class="swatch">Body size<br>16–18px</div>
+</div>
+
+<!-- FRAME 1: HOMEPAGE -->
+<div class="frame-block">
+    <p class="frame-label">Frame 1 — Homepage</p>
+    <div class="frame">
+        <div class="site-header">
+            <p class="today-date">Monday, September 21, 2026</p>
+            <h1>Bilisha</h1>
+            <nav>
+                <a>All Stories</a><a>Local</a><a>World</a><a>Business</a><a>Sports</a>
+            </nav>
+        </div>
+        <div style="max-width:900px;margin:0 auto;padding:1.6rem 1.2rem 2.2rem;">
+            <div class="top-section">
+                <div class="lead-story">
+                    <span class="tag">Local</span>
+                    <h2>City Council Approves New Riverside Park</h2>
+                    <p>A 12 acre park will open next spring on the eastern riverbank after the council voted yes.</p>
+                    <p class="byline">By Maya Chen</p>
+                </div>
+                <div class="side-list">
+                    <h3>More Headlines</h3>
+                    <div class="side-item"><a>Local Bakery Opens Two More Locations</a><p class="small-text">Business</p></div>
+                    <div class="side-item"><a>School District Testing a 4 Day School Week</a><p class="small-text">Local</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="mini-footer">&copy; 2026 Bilisha</div>
+    </div>
+</div>
+<p class="note">Layout: 2/3 lead story + 1/3 side list, separated by a hairline (not a card or shadow). Stacks vertically on mobile.</p>
+
+<!-- FRAME 2: ARTICLE PAGE -->
+<div class="frame-block">
+    <p class="frame-label">Frame 2 — Article Page</p>
+    <div class="frame">
+        <div class="site-header">
+            <p class="today-date">Monday, September 21, 2026</p>
+            <h1>Bilisha</h1>
+        </div>
+        <div style="max-width:900px;margin:0 auto;padding:1.6rem 1.2rem 2.2rem;">
+            <a class="back-link">&larr; back to home</a>
+            <article class="full-article">
+                <span class="tag">Local</span>
+                <h1>City Council Approves New Riverside Park</h1>
+                <p class="byline">By Maya Chen</p>
+                <p>The city council voted 7 to 0 on Tuesday to fund a new park along the eastern riverbank.</p>
+                <p>Construction starts in October and the park should open by next spring.</p>
+            </article>
+        </div>
+        <div class="mini-footer">&copy; 2026 Bilisha</div>
+    </div>
+</div>
+<p class="note">Article body max-width ~620px for comfortable reading line length.</p>
+
+<!-- FRAME 3: ADD ARTICLE FORM -->
+<div class="frame-block">
+    <p class="frame-label">Frame 3 — Add Article Form</p>
+    <div class="frame">
+        <div class="site-header">
+            <h1>Bilisha</h1>
+            <p style="font-size:0.85rem;color:var(--muted);margin-top:0.3rem;">Add a new article</p>
+        </div>
+        <div style="max-width:900px;margin:0 auto;padding:1.6rem 1.2rem 2.2rem;">
+            <form class="add-form">
+                <label>Title</label>
+                <input type="text" placeholder="Article title">
+                <label>Category</label>
+                <select><option>Local</option></select>
+                <label>Author</label>
+                <input type="text" placeholder="Staff Writer">
+                <label>Summary</label>
+                <textarea rows="2" placeholder="Short summary"></textarea>
+                <label>Full Article</label>
+                <textarea rows="5" placeholder="Full story text"></textarea>
+                <button type="button">Post Article</button>
+            </form>
+        </div>
+        <div class="mini-footer">&copy; 2026 Bilisha</div>
+    </div>
+</div>
+<p class="note">Form fields: 1px hairline border, 3px radius, red button. No card container around the form itself — it sits directly on the paper background.</p>
+
+</body>
+</html>
